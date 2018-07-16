@@ -270,12 +270,14 @@ void beeper::setTone() {
 	if( !bst_isset(BEEP_HIGH) ) {
 	  toneAC(CLIMBING_ALARM_FREQ, volume);
 	  bst_set(BEEP_HIGH);
+//	  digitalWrite(13, HIGH);
 	} else if( bst_isset(BEEP_NEW_FREQ) ) {
 	  toneAC(CLIMBING_ALARM_FREQ, volume);
 	}
       } else {
 	toneAC(0.0);
 	bst_unset(BEEP_HIGH);
+	//digitalWrite(13, LOW);
       }
     }
 

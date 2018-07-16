@@ -11,8 +11,8 @@
 /* the SetVarioParameters Sketch to store  */
 /* them in EEPROM.                         */
 #define VARIOMETER_MODEL "GNUVario"
-#define VARIOMETER_PILOT_NAME "Prunk Dump"
-#define VARIOMETER_GLIDER_NAME "ITV Dolpo 2"
+#define VARIOMETER_PILOT_NAME "Shachar Liberman"
+#define VARIOMETER_GLIDER_NAME "AirDesign Rise 2"
 
 /* time zone relative to UTC */
 #define VARIOMETER_TIME_ZONE (+2) 
@@ -92,7 +92,8 @@
 /* Possible values are :                                  */
 /*  - VARIOMETER_SENT_LXNAV_SENTENCE                      */
 /*  - VARIOMETER_SENT_LK8000_SENTENCE                     */
-#define VARIOMETER_SENT_LXNAV_SENTENCE
+//#define VARIOMETER_SENT_LXNAV_SENTENCE
+#define VARIOMETER_SENT_LK8000_SENTENCE
 
 /* When there is no GPS to sync variometer bluetooth sentences */
 /* set the delay between sendings in milliseconds.             */ 
@@ -109,16 +110,16 @@
 /* what you embed in the variometer   */ 
 #define HAVE_SPEAKER
 #define HAVE_ACCELEROMETER
-#define HAVE_SCREEN
-#define HAVE_GPS
-#define HAVE_SDCARD
+//#define HAVE_SCREEN
+//#define HAVE_GPS
+//#define HAVE_SDCARD
 #define HAVE_BLUETOOTH
 #define HAVE_VOLTAGE_DIVISOR
 
 /* If you embed an accelerometer set the model here. */
 /* Possible values are :                             */
 /*   MPU6050, MPU6500, MPU9150, MPU9250              */
-#define MPU9250
+#define MPU6050
 
 /* calibration method */
 // by EEPROM
@@ -146,7 +147,7 @@
 
 /* The voltage divisor */
 #define VOLTAGE_DIVISOR_VALUE 1.27
-#define VOLTAGE_DIVISOR_REF_VOLTAGE 3.3
+#define VOLTAGE_DIVISOR_REF_VOLTAGE 5
 
 /* The bauds rate used by the GPS and Bluetooth modules. */
 /* GPS and bluetooth need to have the same bauds rate.   */
@@ -158,3 +159,12 @@
 #define FASTWIRE_SPEED 400
 
 #endif
+
+
+
+
+
+
+
+
+
