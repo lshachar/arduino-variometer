@@ -4,3 +4,4 @@
 *.HEX
 best-fit-calibration/*.IGC
 best-fit-calibration/*.pyc
+libraries/beeper/beeper.h-longer beeps (before 23.7)

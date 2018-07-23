@@ -6,6 +6,7 @@
 #include <LightInvensense.h>
 #include <avr/pgmspace.h>
 #include <accelcalibrator.h>
+#include <VarioSettings.h>
 
 AccelCalibrator calibrator;
             

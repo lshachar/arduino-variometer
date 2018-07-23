@@ -97,7 +97,7 @@
 
 /* When there is no GPS to sync variometer bluetooth sentences */
 /* set the delay between sendings in milliseconds.             */ 
-#define VARIOMETER_SENTENCE_DELAY 2000
+#define VARIOMETER_SENTENCE_DELAY 500
 
 
 /*----------------------------*/
