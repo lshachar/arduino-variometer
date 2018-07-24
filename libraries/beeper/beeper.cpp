@@ -183,11 +183,10 @@ void beeper::setBeepPaternPosition(double velocity) {
    
   unsigned long currentTime = millis();
   double currentLength = (double)(currentTime - beepStartTime) / 1000.0;
-
   
-  /*********************************/
-  /* update sinking tone frequency */
-  /*********************************/  
+  /************************************/
+  /* update sinking tone frequency    */
+  /************************************/  
   if( !haveAlarm &&
        beepType == BEEP_TYPE_SINKING ) {
     if (currentTime > beepFreqUpdatePosition + SINKING_BEEP_FREQ_UPDATE && SINKING_BEEP_FREQ_UPDATE > 0) {
@@ -208,7 +207,7 @@ return;
     if( currentLength + beepPaternBasePosition > beepPaternPosition ) {
       beepPaternPosition = currentLength + beepPaternBasePosition;
     }
-    if (currentTime > beepFreqUpdatePosition + CLIMBING_BEEP_FREQ_UPDATE && CLIMBING_BEEP_FREQ_UPDATE > 0) {
+    if (currentTime > beepFreqUpdatePosition + SINKING_BEEP_FREQ_UPDATE) {
       bst_set(BEEP_NEW_FREQ);
       beepFreqUpdatePosition = currentTime;	
 	}
@@ -356,7 +355,7 @@ void beeper::setTone() {
 	    if( !bst_isset(BEEP_HIGH) ) {
 	      toneAC(beepFreq, volume);
 	      bst_set(BEEP_HIGH);
-	    } else if( bst_isset(BEEP_NEW_FREQ) ) {
+	    } else if( bst_isset(BEEP_NEW_FREQ) && CLIMBING_BEEP_FREQ_UPDATE > 0 ) {
 	      toneAC(beepFreq, volume);
 	    }
       } else {
