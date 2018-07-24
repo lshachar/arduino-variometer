@@ -36,8 +36,8 @@
 /********************/
 /* THE SINKING BEEP */
 /********************/
-#define SINKING_BEEP_BASE_FREQ 670.0
-#define SINKING_BEEP_FREQ_COEFF 135.0
+#define SINKING_BEEP_BASE_FREQ 533.0
+#define SINKING_BEEP_FREQ_COEFF 67.0
 #define SINKING_BEEP_FREQ_UPDATE 1  // update sinking beep frequency after X milliseconds. 0 = monotonous beep, do not update frequency while beep is playing
 
 /********************/
