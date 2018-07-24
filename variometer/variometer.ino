@@ -159,6 +159,7 @@ kalmanvert kalmanvert;
 #ifdef HAVE_SPEAKER
 beeper beeper(VARIOMETER_SINKING_THRESHOLD, VARIOMETER_CLIMBING_THRESHOLD, VARIOMETER_NEAR_CLIMBING_SENSITIVITY, VARIOMETER_BEEP_VOLUME);
 #endif
+//#define ledpin 13
 
 /***************/
 /* gps objects */
@@ -228,6 +229,7 @@ void beeperTapCallback(unsigned char direction, unsigned char count) {
 /*      SETUP      */
 /*-----------------*/
 void setup() {
+  //pinMode(ledpin, OUTPUT);
 
   /*****************************/
   /* wait for devices power on */

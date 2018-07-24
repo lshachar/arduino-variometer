@@ -180,10 +180,11 @@ void beeper::setBeepPaternPosition(double velocity) {
        beepType == BEEP_TYPE_SILENT ) {
     return;
   }
-  
+   
   unsigned long currentTime = millis();
   double currentLength = (double)(currentTime - beepStartTime) / 1000.0;
 
+  
   /*********************************/
   /* update sinking tone frequency */
   /*********************************/  
@@ -267,7 +268,7 @@ return;
 
 
 void beeper::setTone() {
-  
+
   /* alarme case */
   if(  bst_isset(CLIMBING_ALARM) || bst_isset(SINKING_ALARM) ) { 
 

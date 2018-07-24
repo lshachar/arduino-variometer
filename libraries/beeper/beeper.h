@@ -30,7 +30,7 @@
 
 /* climbing beep velocity filter */
 /* filteredVelocity = beepVelocity * BEEP_VELOCITY_FILTER_COEFF + BEEP_VELOCITY_FILTER_BASE */
-#define CLIMBING_BEEP_VELOCITY_FILTER_BASE 1.62
+#define CLIMBING_BEEP_VELOCITY_FILTER_BASE 1.05
 #define CLIMBING_BEEP_VELOCITY_FILTER_COEFF 0.51
 
 /********************/
