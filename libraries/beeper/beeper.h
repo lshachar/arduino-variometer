@@ -24,8 +24,8 @@
 #define CLIMBING_BEEP_LENGTH (CLIMBING_BEEP_HIGH_LENGTH + CLIMBING_BEEP_LOW_LENGTH)
 
 /* climbing beep sound freq computation : BEEP_FREQ_COEFF * velocity + BEEP_BASE_FREQ */
-#define CLIMBING_BEEP_BASE_FREQ 386.0
-#define CLIMBING_BEEP_FREQ_COEFF 141.0
+#define CLIMBING_BEEP_BASE_FREQ 493.0
+#define CLIMBING_BEEP_FREQ_COEFF 135.0
 #define CLIMBING_BEEP_FREQ_UPDATE 1  // update climbing beep frequency after X milliseconds. 0 = monotonous beep, do not update frequency while beep is playing
 
 /* climbing beep velocity filter */
