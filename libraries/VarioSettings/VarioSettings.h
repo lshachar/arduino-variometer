@@ -35,8 +35,8 @@
 /*        !!! Only when you change one   !!!          */
 /*        !!! of these 3 settings.       !!!          */
 #define VARIOMETER_MODEL "GNUVario"
-#define VARIOMETER_PILOT_NAME "Prunk Dump"
-#define VARIOMETER_GLIDER_NAME "ITV Dolpo 2"
+#define VARIOMETER_PILOT_NAME "Shachar Liberman"
+#define VARIOMETER_GLIDER_NAME "AirDesign Rise 2"
 /*        !!! For the others compilation !!!          */
 /*------- !!! is sufficient.             !!! ---------*/
 
@@ -57,7 +57,7 @@
 /* <--LOW-BEEP--|------SILENT------|--NEAR-CLIMBING-BEEP--|--CLIMBING-BEEP--> */
 /*              |                  |                      |                   */
 /*           SINKING         CLIMBING-SENSITIVITY      CLIMBING               */
-#define VARIOMETER_SINKING_THRESHOLD -2.0
+#define VARIOMETER_SINKING_THRESHOLD -1.5
 #define VARIOMETER_CLIMBING_THRESHOLD 0.2
 #define VARIOMETER_NEAR_CLIMBING_SENSITIVITY 0.5
 
@@ -126,11 +126,12 @@
 /* Possible values are :                                  */
 /*  - VARIOMETER_SENT_LXNAV_SENTENCE                      */
 /*  - VARIOMETER_SENT_LK8000_SENTENCE                     */
-#define VARIOMETER_SENT_LXNAV_SENTENCE
+//#define VARIOMETER_SENT_LXNAV_SENTENCE
+#define VARIOMETER_SENT_LK8000_SENTENCE
 
 /* When there is no GPS to sync variometer bluetooth sentences */
 /* set the delay between sendings in milliseconds.             */ 
-#define VARIOMETER_SENTENCE_DELAY 2000
+#define VARIOMETER_SENTENCE_DELAY 250
 
 
 /*----------------------------*/
@@ -143,9 +144,9 @@
 /* what you embed in the variometer   */ 
 #define HAVE_SPEAKER
 #define HAVE_ACCELEROMETER
-#define HAVE_SCREEN
-#define HAVE_GPS
-#define HAVE_SDCARD
+//#define HAVE_SCREEN
+//#define HAVE_GPS
+//#define HAVE_SDCARD
 #define HAVE_BLUETOOTH
 #define HAVE_VOLTAGE_DIVISOR
 
@@ -190,7 +191,7 @@
 
 /* The voltage divisor */
 #define VOLTAGE_DIVISOR_VALUE 1.27
-#define VOLTAGE_DIVISOR_REF_VOLTAGE 3.3
+#define VOLTAGE_DIVISOR_REF_VOLTAGE 5
 
 /* The bauds rate used by the GPS and Bluetooth modules. */
 /* GPS and bluetooth need to have the same bauds rate.   */
