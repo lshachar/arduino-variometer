@@ -58,8 +58,8 @@
 /*              |                  |                      |                   */
 /*           SINKING         CLIMBING-SENSITIVITY      CLIMBING               */
 #define VARIOMETER_SINKING_THRESHOLD -1.5
-#define VARIOMETER_CLIMBING_THRESHOLD 0.2
-#define VARIOMETER_NEAR_CLIMBING_SENSITIVITY 0.5
+#define VARIOMETER_CLIMBING_THRESHOLD 0.15
+#define VARIOMETER_NEAR_CLIMBING_SENSITIVITY 0.65
 
 /* The near climbing alarm : signal that you enter or exit the near climbing zone */
 /* The near climbing beep : beep when you are in near climbing zone               */
@@ -115,7 +115,7 @@
 /* -> Based on international standard atmosphere        */
 /* -> Calibrated with GPS altitude                      */
 //#define VARIOMETER_SDCARD_SEND_CALIBRATED_ALTITUDE
-//#define VARIOMETER_BLUETOOTH_SEND_CALIBRATED_ALTITUDE
+#define VARIOMETER_BLUETOOTH_SEND_CALIBRATED_ALTITUDE
 
 /* GPS track recording on SD card starting condition :  */ 
 /* -> As soon as possible (GPS fix)                     */
@@ -131,7 +131,7 @@
 
 /* When there is no GPS to sync variometer bluetooth sentences */
 /* set the delay between sendings in milliseconds.             */ 
-#define VARIOMETER_SENTENCE_DELAY 250
+#define VARIOMETER_SENTENCE_DELAY 1000
 
 
 /*----------------------------*/
@@ -145,7 +145,7 @@
 #define HAVE_SPEAKER
 #define HAVE_ACCELEROMETER
 //#define HAVE_SCREEN
-//#define HAVE_GPS
+#define HAVE_GPS
 //#define HAVE_SDCARD
 #define HAVE_BLUETOOTH
 #define HAVE_VOLTAGE_DIVISOR
@@ -169,12 +169,27 @@
 
 /* calibration method */
 // comment this following line to use EEPROM instead of static values
+// 15.9 values (better, does not beep at 0.15 in all directions):
 #define VERTACCEL_STATIC_CALIBRATION
-#define VERTACCEL_GYRO_CAL_BIAS {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00}
-#define VERTACCEL_ACCEL_CAL_BIAS {0, 0, 0}
-#define VERTACCEL_ACCEL_CAL_SCALE 0
-#define VERTACCEL_MAG_CAL_BIAS {0, 0, 0}
-#define VERTACCEL_MAG_CAL_PROJ_SCALE -16689
+#define VERTACCEL_GYRO_CAL_BIAS {0xff, 0xfe, 0xae, 0xd1, 0x00, 0x00, 0xbf, 0x51, 0x00, 0x00, 0x2c, 0xa2}
+#define VERTACCEL_ACCEL_CAL_BIAS {4908, -1612, -19341}
+#define VERTACCEL_ACCEL_CAL_SCALE -350
+#define VERTACCEL_MAG_CAL_BIAS {21379, -31629, 1026}
+#define VERTACCEL_MAG_CAL_PROJ_SCALE -65277
+#define VERTACCEL_ACCEL_CAL_BIAS_MULTIPLIER 5
+#define VERTACCEL_MAG_CAL_BIAS_MULTIPLIER 0
+
+/* 12.9 values:
+#define VERTACCEL_STATIC_CALIBRATION
+#define VERTACCEL_GYRO_CAL_BIAS {0xff, 0xfe, 0xdc, 0xa1, 0x00, 0x00, 0x9e, 0x91, 0x00, 0x00, 0x24, 0x26}
+#define VERTACCEL_ACCEL_CAL_BIAS {4580, -1764, -23133}
+#define VERTACCEL_ACCEL_CAL_SCALE -372
+#define VERTACCEL_MAG_CAL_BIAS {-49623, 402287, -18367}
+#define VERTACCEL_MAG_CAL_PROJ_SCALE -65536
+#define VERTACCEL_ACCEL_CAL_BIAS_MULTIPLIER 5
+#define VERTACCEL_MAG_CAL_BIAS_MULTIPLIER -2   //-48 in my last attempt. but before that 0 or -2 for several calibrations, so i used that one. mag is used for wind speed calcs - not important without a screen.
+*/
+
 
 /* Set the pins used for Screen and SD card modules */
 #define VARIOSCREEN_DC_PIN 6
