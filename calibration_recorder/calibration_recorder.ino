@@ -32,8 +32,8 @@
 #include <FirmwareUpdater.h>
 
 /* where output ? */
-//#define SERIAL_OUTPUT
-#define SDCARD_OUTPUT
+#define SERIAL_OUTPUT
+//#define SDCARD_OUTPUT
 
 /* need beeps */
 #define MAKE_BEEP

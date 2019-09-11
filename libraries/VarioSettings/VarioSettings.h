@@ -115,7 +115,7 @@
 /* -> Based on international standard atmosphere        */
 /* -> Calibrated with GPS altitude                      */
 //#define VARIOMETER_SDCARD_SEND_CALIBRATED_ALTITUDE
-//#define VARIOMETER_BLUETOOTH_SEND_CALIBRATED_ALTITUDE
+#define VARIOMETER_BLUETOOTH_SEND_CALIBRATED_ALTITUDE
 
 /* GPS track recording on SD card starting condition :  */ 
 /* -> As soon as possible (GPS fix)                     */
@@ -131,7 +131,7 @@
 
 /* When there is no GPS to sync variometer bluetooth sentences */
 /* set the delay between sendings in milliseconds.             */ 
-#define VARIOMETER_SENTENCE_DELAY 250
+#define VARIOMETER_SENTENCE_DELAY 1000
 
 
 /*----------------------------*/
@@ -145,7 +145,7 @@
 #define HAVE_SPEAKER
 #define HAVE_ACCELEROMETER
 //#define HAVE_SCREEN
-//#define HAVE_GPS
+#define HAVE_GPS
 //#define HAVE_SDCARD
 #define HAVE_BLUETOOTH
 #define HAVE_VOLTAGE_DIVISOR
@@ -170,11 +170,13 @@
 /* calibration method */
 // comment this following line to use EEPROM instead of static values
 #define VERTACCEL_STATIC_CALIBRATION
-#define VERTACCEL_GYRO_CAL_BIAS {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00}
-#define VERTACCEL_ACCEL_CAL_BIAS {0, 0, 0}
-#define VERTACCEL_ACCEL_CAL_SCALE 0
-#define VERTACCEL_MAG_CAL_BIAS {0, 0, 0}
-#define VERTACCEL_MAG_CAL_PROJ_SCALE -16689
+#define VERTACCEL_GYRO_CAL_BIAS {0xff, 0xfe, 0xdc, 0xa1, 0x00, 0x00, 0x9e, 0x91, 0x00, 0x00, 0x24, 0x26}
+#define VERTACCEL_ACCEL_CAL_BIAS {4580, -1764, -23133}
+#define VERTACCEL_ACCEL_CAL_SCALE -372
+#define VERTACCEL_MAG_CAL_BIAS {-49623, 402287, -18367}
+#define VERTACCEL_MAG_CAL_PROJ_SCALE -65536
+#define VERTACCEL_ACCEL_CAL_BIAS_MULTIPLIER 5
+#define VERTACCEL_MAG_CAL_BIAS_MULTIPLIER -2   //-48 in my last attempt. but before that 0 or -2 for several calibrations, so i used that one. mag is used for wind speed calcs - not important without a screen.
 
 /* Set the pins used for Screen and SD card modules */
 #define VARIOSCREEN_DC_PIN 6
