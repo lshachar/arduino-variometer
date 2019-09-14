@@ -58,13 +58,13 @@
 /*              |                  |                      |                   */
 /*           SINKING         CLIMBING-SENSITIVITY      CLIMBING               */
 #define VARIOMETER_SINKING_THRESHOLD -1.5
-#define VARIOMETER_CLIMBING_THRESHOLD 0.2
-#define VARIOMETER_NEAR_CLIMBING_SENSITIVITY 0.5
+#define VARIOMETER_CLIMBING_THRESHOLD 0.1
+#define VARIOMETER_NEAR_CLIMBING_SENSITIVITY 0.6
 
 /* The near climbing alarm : signal that you enter or exit the near climbing zone */
 /* The near climbing beep : beep when you are in near climbing zone               */
 //#define VARIOMETER_ENABLE_NEAR_CLIMBING_ALARM
-//#define VARIOMETER_ENABLE_NEAR_CLIMBING_BEEP
+#define VARIOMETER_ENABLE_NEAR_CLIMBING_BEEP
 
 
 /*******************/
@@ -145,7 +145,7 @@
 #define HAVE_SPEAKER
 #define HAVE_ACCELEROMETER
 //#define HAVE_SCREEN
-#define HAVE_GPS
+//#define HAVE_GPS
 //#define HAVE_SDCARD
 #define HAVE_BLUETOOTH
 #define HAVE_VOLTAGE_DIVISOR

@@ -105,9 +105,25 @@ double kalmanvert::getCalibratedPosition() {
   return (p + calibrationDrift);
 }
 
-double kalmanvert::getVelocity() {
+#define MAXCLIMB 0.5
+#define MINCLIMB -1.0
+int lastMillis;
+double currClimbVal=MAXCLIMB;
+int upDownWait =-1;  // wait = 0 up = 1 down = -1
 
-  return v;
+
+
+double kalmanvert::getVelocity() {
+  if ((upDownWait == 1) && (currClimbVal >= MAXCLIMB)){
+	  upDownWait = -1;
+  } else
+  if ((upDownWait == -1) && (currClimbVal <= MINCLIMB)){
+	  upDownWait = 1;
+  }
+  currClimbVal += (upDownWait * 0.001);
+  
+	  
+  return (v+currClimbVal);
 }
 
 double kalmanvert::getAcceleration() {
